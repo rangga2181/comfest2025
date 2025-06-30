@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - SEA Catering</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .subscription-list { list-style: none; padding: 0; }
+        .subscription-item { background: #f9f9f9; border: 1px solid #eee; border-left: 5px solid var(--primary-color); border-radius: 8px; padding: 20px; margin-bottom: 20px; }
+        .subscription-item h3 { margin-top: 0; }
+        .subscription-details { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 15px 0; }
+        .detail-item span { font-weight: bold; }
+        .actions button { margin-right: 10px; width: auto; font-size: 0.9em; padding: 8px 15px; }
+        .status-tag { padding: 5px 10px; border-radius: 20px; color: white; font-size: 0.8em; text-transform: uppercase; }
+        .status-tag.active { background-color: var(--primary-color); }
+        .status-tag.paused { background-color: #ffa726; }
+        .status-tag.canceled { background-color: #ef5350; }
+    </style>
+</head>
+<body>
+    <nav class="navbar"><a href="index.html" class="nav-brand">SEA Catering</a><div id="nav-dynamic-content"></div></nav>
+    <div class="container">
+        <section class="page-section active">
+            <h2>Dashboard Langganan Anda</h2>
+            <div id="subscription-list-container">
+                <p>Memuat data langganan Anda...</p>
+            </div>
+        </section>
+    </div>
+
+    <dialog id="pause-modal" class="modal-dialog">
+        <div class="page-section active" style="margin:0;">
+            <form id="pause-form">
+                <h3>Jeda Langganan</h3>
+                <input type="hidden" id="pause-sub-id" name="subscriptionId">
+                <div class="form-group">
+                    <label for="pause-start-date">Tanggal Mulai Jeda</label>
+                    <input type="date" id="pause-start-date" name="startDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="pause-end-date">Tanggal Akhir Jeda</label>
+                    <input type="date" id="pause-end-date" name="endDate" required>
+                </div>
+                <button type="submit" class="btn">Simpan</button>
+                <button type="button" class="btn" style="background-color: var(--dark-gray); margin-top: 10px;" onclick="document.getElementById('pause-modal').close()">Batal</button>
+            </form>
+        </div>
+    </dialog>
+
+    <script src="main.js"></script>
+</body>
+</html>

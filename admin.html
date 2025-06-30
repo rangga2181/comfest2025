@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - SEA Catering</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .metric-card { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); text-align: center; }
+        .metric-card h3 { margin-top: 0; color: var(--secondary-color); font-size: 1.1em; }
+        .metric-card .value { font-size: 2.5em; font-weight: bold; color: var(--primary-color); }
+        .filter-form { display: flex; gap: 15px; align-items: flex-end; margin-bottom: 30px; flex-wrap: wrap; }
+    </style>
+</head>
+<body>
+    <nav class="navbar"><a href="index.html" class="nav-brand">SEA Catering</a><div id="nav-dynamic-content"></div></nav>
+    <div class="container">
+        <section id="auth-gate" class="page-section active" style="display: none;">
+            <h2>Akses Ditolak</h2><p>Hanya Admin yang dapat mengakses halaman ini.</p><a href="index.html" class="btn" style="width: auto;">Kembali ke Halaman Utama</a>
+        </section>
+        
+        <div id="admin-content" style="display: none;">
+            <section class="page-section active">
+                <h2>Admin Dashboard: Metrik Bisnis</h2>
+                <div class="filter-form">
+                    <div class="form-group"><label for="start-date">Dari Tanggal</label><input type="date" id="start-date"></div>
+                    <div class="form-group"><label for="end-date">Sampai Tanggal</label><input type="date" id="end-date"></div>
+                    <button id="filter-btn" class="btn" style="width: auto; height: 46px;">Terapkan Filter</button>
+                </div>
+                <div id="metrics-container" class="metrics-grid">
+                    <div class="metric-card"><h3>Langganan Baru</h3><p id="new-subs-value" class="value">0</p></div>
+                    <div class="metric-card"><h3>Pendapatan Bulanan (MRR)</h3><p id="mrr-value" class="value">Rp 0</p></div>
+                    <div class="metric-card"><h3>Reaktivasi</h3><p id="reactivations-value" class="value">0</p></div>
+                    <div class="metric-card"><h3>Total Langganan Aktif</h3><p id="active-subs-value" class="value">0</p></div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

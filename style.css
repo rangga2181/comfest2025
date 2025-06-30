@@ -1,0 +1,65 @@
+/* style.css */
+:root { --primary-color: #2E8B57; --secondary-color: #256d47; --light-gray: #f8f9fa; --dark-gray: #343a40; --text-color: #333; }
+body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; padding-top: 70px; background-color: var(--light-gray); color: var(--text-color); line-height: 1.6; }
+.container { max-width: 1100px; margin: 20px auto; padding: 0 20px; }
+.page-section { padding: 30px; margin-bottom: 20px; background: #ffffff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+h1 { font-size: 3em; color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); }
+h2 { font-size: 2em; color: var(--primary-color); border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; margin-bottom: 20px; }
+h3 { color: var(--secondary-color); }
+.btn { display: inline-block; background-color: var(--primary-color); color: white; padding: 12px 25px; border: none; border-radius: 5px; cursor: pointer; text-decoration: none; transition: background-color 0.3s; font-size: 1em; width: 100%; box-sizing: border-box; text-align: center; }
+.btn:hover:not(:disabled) { background-color: var(--secondary-color); }
+.btn:disabled { background-color: #9E9E9E; cursor: not-allowed; }
+.navbar { background-color: #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; height: 70px; }
+.nav-brand { font-size: 1.5em; font-weight: bold; color: var(--primary-color); text-decoration: none; cursor: pointer; }
+.nav-links { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; }
+.nav-links li { margin-left: 5px; }
+.nav-links a, .nav-links .nav-text { display: block; padding: 10px 15px; text-decoration: none; color: var(--text-color); font-weight: 500; border-radius: 5px; transition: background-color 0.2s, color 0.2s; cursor: pointer; }
+.nav-links a:hover { background-color: #f0f0f0; }
+.nav-links a.active { background-color: var(--primary-color); color: white; }
+.form-group { display: flex; flex-direction: column; margin-bottom: 15px; }
+.form-group label { margin-bottom: 8px; font-weight: bold; }
+.form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+.form-group small { font-size: 0.8em; color: #666; margin-top: 5px; }
+.status-message { padding: 15px; margin-top: 20px; border-radius: 5px; display: none; text-align: center; }
+.status-message.success { background-color: #d4edda; color: #155724; }
+.status-message.error { background-color: #f8d7da; color: #721c24; }
+.auth-container { max-width: 450px; margin: 20px auto; }
+.form-toggle { text-align: center; margin-top: 20px; }
+.form-toggle span { color: var(--primary-color); cursor: pointer; text-decoration: underline; }
+.hero { background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2070') no-repeat center center; background-size: cover; text-align: center; padding: 80px 20px; color: white; border-radius: 8px; }
+.meal-plans-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.meal-card { border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.05); text-align: center; }
+.meal-card img { width: 100%; height: 180px; object-fit: cover; }
+.meal-card-content { padding: 20px; }
+.testimonial-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
+@media (min-width: 992px) { .testimonial-grid { grid-template-columns: 2fr 1fr; } }
+.testimonial-slider { position: relative; min-height: 180px; background: #fdfdfd; padding: 30px; border-radius: 8px; border: 1px solid #eee; }
+.testimonial-slide { display: none; text-align: center; }
+.testimonial-slide.active { display: block; animation: fadeIn 0.5s; }
+.testimonial-slide blockquote { font-style: italic; font-size: 1.1em; margin: 0 0 15px 0; border: none; padding: 0; }
+.testimonial-slide .author { font-weight: bold; color: var(--secondary-color); }
+.testimonial-slide .stars { color: #fdd835; margin-top: 10px; font-size: 1.2em; }
+.slider-nav { position: absolute; top: 50%; width: calc(100% - 20px); left: 10px; display: flex; justify-content: space-between; transform: translateY(-50%); z-index: 10; }
+.slider-nav button { background: rgba(0,0,0,0.2); color: white; border: none; padding: 8px 12px; font-size: 16px; cursor: pointer; border-radius: 50%; width: 40px; height: 40px; line-height: 1; }
+.rating-stars { display: inline-flex; flex-direction: row-reverse; justify-content: flex-end; }
+.rating-stars input { display: none; }
+.rating-stars label { color: #ccc; cursor: pointer; font-size: 2.5em; transition: color 0.2s; padding: 0 2px; }
+.rating-stars input:checked ~ label, .rating-stars label:hover, .rating-stars label:hover ~ label { color: #fdd835; }
+.modal-dialog { padding: 0; border: none; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); width: 90%; max-width: 480px; }
+.modal-dialog::backdrop { background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(3px); }
+.subscription-list { list-style: none; padding: 0; }
+.subscription-item { background: #f9f9f9; border: 1px solid #eee; border-left: 5px solid var(--primary-color); border-radius: 8px; padding: 20px; margin-bottom: 20px; }
+.subscription-item h3 { margin-top: 0; }
+.subscription-details { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 15px 0; }
+.detail-item span { font-weight: bold; }
+.actions button { margin-right: 10px; width: auto; font-size: 0.9em; padding: 8px 15px; }
+.status-tag { padding: 5px 10px; border-radius: 20px; color: white; font-size: 0.8em; text-transform: uppercase; }
+.status-tag.active { background-color: var(--primary-color); }
+.status-tag.paused { background-color: #ffa726; }
+.status-tag.canceled { background-color: #ef5350; }
+.metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.metric-card { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); text-align: center; }
+.metric-card h3 { margin-top: 0; color: var(--secondary-color); font-size: 1.1em; }
+.metric-card .value { font-size: 2.5em; font-weight: bold; color: var(--primary-color); }
+.filter-form { display: flex; gap: 15px; align-items: flex-end; margin-bottom: 30px; flex-wrap: wrap; }
